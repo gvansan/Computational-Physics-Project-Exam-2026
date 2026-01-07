@@ -52,7 +52,7 @@ The dissociation curve of $H_2$ reveals how its energy changes as the internucle
    - matplotlib
    - tqdm
 
-2. **Custom Modules:** The notebook requires a function called `compute_integrals` from `basistool.py` and an appropriate basis set file (`basis_sets/aug-cc-pvdz.gbs`). Also used are the functions from the `utils.py` file, namely, 
+2. **Custom Modules:** The notebook requires a function called `compute_integrals` from `basistool.py` and an appropriate basis set file (`basis_sets/aug-cc-pvdz.gbs`). Also used are the functions from the `utils.py` file, namely, `compute_integrals`, `solve_rhf`, `solve_uhf`, `analyze_equilibrium_orbitals`, `ao_to_mo_2orb`, `ci_block_singlet_2orb`, `compute_ci_energy`.
 3. Make sure these are present in your repository.
 
 4. **Jupyter Notebook:** Open the notebook in Jupyter or JupyterLab and run the cells sequentially. Plots will be saved in a directory called `Images/`.
