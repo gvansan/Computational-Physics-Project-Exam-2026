@@ -1,6 +1,6 @@
 # Hydrogen Molecule Dissociation via Configuration Interaction (CI)
 
-This repository contains a Jupyter notebook (`Computational_examen_group11.ipynb`) that explores the dissociation curve of the hydrogen molecule ($H_2$) using Restricted Hartree-Fock (RHF), Unrestricted Hartree-Fock (UHF), and CI (Configuration Interaction). The notebook shows how CI improves upon standard Hartree-Fock results.
+This repository contains a Jupyter notebook (`Computational_exam_group11.ipynb`) that explores the dissociation curve of the hydrogen molecule ($H_2$) using Restricted Hartree-Fock (RHF), Unrestricted Hartree-Fock (UHF), and CI (Configuration Interaction). The notebook shows how CI improves upon standard Hartree-Fock results.
 
 ## Overview
 
