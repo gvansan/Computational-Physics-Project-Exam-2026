@@ -67,6 +67,5 @@ For experimental results:
 
 ---
 
-**Author:** drkallae  
+**Author:** Miel Mathys, Grégoire Van San, Mathijs DeKeyser, Dries Kallaert
 **Date:** Jan 2026  
-**License:** MIT
