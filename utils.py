@@ -269,7 +269,6 @@ def solve_rhf(dists,datas):
 
         # Compute the occupied orbital on the grid.
         psi0 = np.dot(eigvecs[:, 0], data["bfs"])
-        psi1 = np.dot(eigvecs[:, 1], data["bfs"])
 
         # Store results back into the data dictionary.
         # (Mind the two electrons.)
@@ -277,8 +276,7 @@ def solve_rhf(dists,datas):
         data['eigvecs_rhf'] = eigvecs
         data["energy_rhf"] = electronic_energy + 1 / dist
         data["density0_rhf"] = psi0**2
-        data["density1_rhf"] = psi1 ** 2
-        data["density_rhf"] = psi0**2 + psi1**2
+        data["density_rhf"] = 2*psi0**2
 
 
 
@@ -345,19 +343,16 @@ def analyze_equilibrium_orbitals(datas):
     data = datas[eq_id] #corresponding data where energy is minimal
     
     psi0 = data["density0_rhf"]  # bonding (σg)
-    psi1 = data["density1_rhf"]  # antibonding (σu)
     
     mid_idx = np. argmin(np. abs(data["points"][: , 2]))
     
     print(f"Equilibrium index: {eq_id}")
     print(f"psi0 (σg) midpoint value: {psi0[mid_idx]:.6f}")
-    print(f"psi1 (σu) midpoint value: {psi1[mid_idx]:.6f}")
     
     return {
         "eq_id": eq_id,
         "data": data,
         "psi0": psi0,
-        "psi1": psi1,
         "mid_idx": mid_idx,
     }
 
