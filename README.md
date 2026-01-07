@@ -44,7 +44,7 @@ The dissociation curve of $H_2$ reveals how its energy changes as the internucle
 
 - **CI Corrects partially HF static correlation:** At dissociation, CI mixes determinants such that electrons correctly localize on separate atoms.
 - **Correlation Energy:** CI recovers part of the correlation energy missing in HF. Due to restricing the CI space to the 2 lowest MO's the error is not completely fixed.
-                          Dynamic correlation is not fixed with our restriced CI model, due to the contributions of a lot of Slater Determinant.
+                          Dynamic correlation is not fixed with our restriced CI model, due to the contributions of a lot of Slater Determinants.
 - **Comparison to Experiment:** Shows close agreement at equilibrium and highlights residual errors due to the finite basis set.
 
 ## How to Run
