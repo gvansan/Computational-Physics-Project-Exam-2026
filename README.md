@@ -1,2 +1,72 @@
-# Computational-Physics-Project-Exam-2026
-This is the repository of Grégoire Van San, Mathijs Dekeyser, Dries Kallaert and Miel Matthys for the exam project of the course Computational Physics
+# Hydrogen Molecule Dissociation via Configuration Interaction (CI)
+
+This repository contains a Jupyter notebook (`FILL IN NAME OF NOTEBOOK`) that explores the dissociation curve of the hydrogen molecule ($H_2$) using Restricted Hartree-Fock (RHF), Unrestricted Hartree-Fock (UHF), and CI (Configuration Interaction). The notebook shows how CI improves upon standard Hartree-Fock results.
+
+## Overview
+
+### Problem Statement
+
+The dissociation curve of $H_2$ reveals how its energy changes as the internuclear distance varies. Hartree-Fock theory provides a mean-field approximation, but fails to account for electron correlation, especially at large distances where correct dissociation is crucial. Configuration Interaction (CI) includes additional excited-state determinants, improving correlation and providing more accurate results across all geometries.
+
+### Techniques
+
+1. **RHF (Restricted Hartree-Fock):**
+   - Both electrons occupy the same spatial orbital.
+   - Suitable for short bond distances (equilibrium).
+   - Incorrectly predicts energy at dissociation.
+
+2. **UHF (Unrestricted Hartree-Fock):**
+   - Alpha and beta electrons can occupy different orbitals.
+   - Improves results at large bond distances by enabling electron localization.
+
+3. **CI (Configuration Interaction):**
+   - Uses a linear combination of Slater determinants (SDs).
+   - Introduces single and double electron excitations to compute the energy.
+   - Diagonalizes the CI matrix to account for both static and dynamic correlation.
+   - Approaches the exact solution (within the chosen basis set).
+
+## Structure of the Notebook
+
+- **Imports and Setup:** Loads required Python libraries (NumPy, SciPy, matplotlib, tqdm) and prepares basis sets and grids for the calculation.
+- **Integrals Calculation:** Computes one- and two-electron integrals using a chosen basis (aug-cc-pvdz.gbs).
+- **Hartree-Fock Calculations:** Performs RHF and UHF calculations to yield energies and electron densities across a range of H–H distances.
+- **Plots:** 
+  - Dissociation curves for RHF and UHF.
+  - Electron densities at equilibrium and large separations.
+- **CI Calculations:** Converts atomic orbital basis to molecular orbitals, sets up and diagonalizes the CI Hamiltonian, and analyzes the resulting energies and densities.
+- **Comparison to Experiment:** Includes experimental data for $H_2$ energy and equilibrium to benchmark theoretical predictions.
+- **Analysis:** Examines correlation energies, CI composition weights (bonding vs antibonding orbital contributions), binding energies, and equilibrium properties.
+
+## Key Results
+
+- **CI Corrects HF Errors:** At dissociation, CI mixes determinants such that electrons correctly localize on separate atoms, fixing the error in RHF.
+- **Correlation Energy:** CI recovers part of the correlation energy missing in HF, especially critical at stretched geometries.
+- **Density Analysis:** Plots visualize how CI redistributes electron density and alters orbital compositions as H–H distance changes.
+- **Comparison to Experiment:** Shows close agreement at equilibrium and highlights residual errors due to the finite basis set.
+
+## How to Run
+
+1. **Prerequisites:** Ensure you have a Python 3 environment with the following packages:
+   - numpy
+   - scipy
+   - matplotlib
+   - tqdm
+
+2. **Custom Modules:** The notebook requires a function called `compute_integrals` from `basistool.py` and an appropriate basis set file (`basis_sets/aug-cc-pvdz.gbs`). Also used are the functions from the `utils.py` file, namely, 
+3. Make sure these are present in your repository.
+
+4. **Jupyter Notebook:** Open the notebook in Jupyter or JupyterLab and run the cells sequentially. Plots will be saved in a directory called `Images/`.
+
+## Citation & Further Reading
+
+- [Helgaker, T., Jørgensen, P., Olsen, J. "Molecular Electronic-Structure Theory"](https://www.elsevier.com/books/molecular-electronic-structure-theory/helgaker/978-0-471-96725-8)
+- [Szabo, A., Ostlund, N.S. "Modern Quantum Chemistry"](https://www.elsevier.com/books/modern-quantum-chemistry/szabo/978-0-486-69186-4)
+
+For experimental results:
+- Vanderslice et al. (1962), Journal of Molecular Spectroscopy
+
+---
+
+**Author:** drkallae  
+**Date:** Jan 2026  
+**License:** MIT
