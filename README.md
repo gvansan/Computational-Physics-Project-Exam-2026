@@ -30,18 +30,21 @@ The dissociation curve of $H_2$ reveals how its energy changes as the internucle
 - **Imports and Setup:** Loads required Python libraries (NumPy, SciPy, matplotlib, tqdm) and prepares basis sets and grids for the calculation.
 - **Integrals Calculation:** Computes one- and two-electron integrals using a chosen basis (aug-cc-pvdz.gbs).
 - **Hartree-Fock Calculations:** Performs RHF and UHF calculations to yield energies and electron densities across a range of H–H distances.
-- **Plots:** 
-  - Dissociation curves for RHF and UHF.
+- **Plots:**
+  - Molecular orbitals $\sigma_g$ and $\sigma_u$ 
+  - Dissociation curves for RHF, UHF, CI and experimental results.
+  - Binding energy curve for RHF and CI
+  - CI composition configuration as a function of R
   - Electron densities at equilibrium and large separations.
-- **CI Calculations:** Converts atomic orbital basis to molecular orbitals, sets up and diagonalizes the CI Hamiltonian, and analyzes the resulting energies and densities.
-- **Comparison to Experiment:** Includes experimental data for $H_2$ energy and equilibrium to benchmark theoretical predictions.
+- **CI Calculations:** Converts atomic orbital basis to molecular orbitals, restricting to the 2 lowest molecular orbitals. It sets up and diagonalizes the CI Hamiltonian using the correct Slater-Condon rules and parity and spin selection rules. It analyzes the resulting energies and densities.
+- **Comparison to Experiment:** Includes experimental data for $H_2$ energy based on a parametrization with 3 variables.
 - **Analysis:** Examines correlation energies, CI composition weights (bonding vs antibonding orbital contributions), binding energies, and equilibrium properties.
 
 ## Key Results
 
-- **CI Corrects HF Errors:** At dissociation, CI mixes determinants such that electrons correctly localize on separate atoms, fixing the error in RHF.
-- **Correlation Energy:** CI recovers part of the correlation energy missing in HF, especially critical at stretched geometries.
-- **Density Analysis:** Plots visualize how CI redistributes electron density and alters orbital compositions as H–H distance changes.
+- **CI Corrects partially HF static correlation:** At dissociation, CI mixes determinants such that electrons correctly localize on separate atoms.
+- **Correlation Energy:** CI recovers part of the correlation energy missing in HF. Due to restricing the CI space to the 2 lowest MO's the error is not completely fixed.
+                          Dynamic correlation is not fixed with our restriced CI model, due to the contributions of a lot of Slater Determinant.
 - **Comparison to Experiment:** Shows close agreement at equilibrium and highlights residual errors due to the finite basis set.
 
 ## How to Run
@@ -52,7 +55,7 @@ The dissociation curve of $H_2$ reveals how its energy changes as the internucle
    - matplotlib
    - tqdm
 
-2. **Custom Modules:** The notebook requires a function called `compute_integrals` from `basistool.py` and an appropriate basis set file (`basis_sets/aug-cc-pvdz.gbs`). Also used are the functions from the `utils.py` file, namely, `compute_integrals`, `solve_rhf`, `solve_uhf`, `analyze_equilibrium_orbitals`, `ao_to_mo_2orb`, `ci_block_singlet_2orb`, `compute_ci_energy`.
+2. **Custom Modules:** The notebook requires a function called `compute_integrals` from `utils.py` and an appropriate basis set file (`basis_sets/aug-cc-pvdz.gbs`). Also used are also functions in the `utils.py` file, namely, `solve_rhf`, `solve_uhf`, `analyze_equilibrium_orbitals`, `ao_to_mo_2orb`, `ci_block_singlet_2orb`, `compute_ci_energy`.
 3. Make sure these are present in your repository.
 
 4. **Jupyter Notebook:** Open the notebook in Jupyter or JupyterLab and run the cells sequentially. Plots will be saved in a directory called `Images/`.
@@ -60,7 +63,7 @@ The dissociation curve of $H_2$ reveals how its energy changes as the internucle
 ## Citations
 
 
-- [Szabo, A., Ostlund, N.S. "Modern Quantum Chemistry"](https://www.elsevier.com/books/modern-quantum-chemistry/szabo/978-0-486-69186-4)
+- [Szabo, A., Ostlund, N.S. "Modern Quantum Chemistry"](https://chemistlibrary.wordpress.com/wp-content/uploads/2015/02/modern-quantum-chemistry.pdf)
 
 For experimental results:
 - Vanderslice et al. (1962), Journal of Molecular Spectroscopy
