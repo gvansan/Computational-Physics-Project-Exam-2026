@@ -57,9 +57,9 @@ The dissociation curve of $H_2$ reveals how its energy changes as the internucle
 
 4. **Jupyter Notebook:** Open the notebook in Jupyter or JupyterLab and run the cells sequentially. Plots will be saved in a directory called `Images/`.
 
-## Citation & Further Reading
+## Citations
 
-- [Helgaker, T., Jørgensen, P., Olsen, J. "Molecular Electronic-Structure Theory"](https://www.elsevier.com/books/molecular-electronic-structure-theory/helgaker/978-0-471-96725-8)
+
 - [Szabo, A., Ostlund, N.S. "Modern Quantum Chemistry"](https://www.elsevier.com/books/modern-quantum-chemistry/szabo/978-0-486-69186-4)
 
 For experimental results:
